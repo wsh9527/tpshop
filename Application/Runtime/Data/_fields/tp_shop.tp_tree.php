@@ -1,0 +1,1 @@
+a:6:{i:0;s:7:"tree_id";i:1;s:7:"user_id";i:2;s:9:"tree_name";i:3;s:9:"parent_id";s:3:"_pk";s:7:"tree_id";s:5:"_type";a:4:{s:7:"tree_id";s:7:"int(10)";s:7:"user_id";s:7:"int(10)";s:9:"tree_name";s:12:"varchar(255)";s:9:"parent_id";s:7:"int(10)";}}

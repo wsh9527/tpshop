@@ -1,0 +1,11 @@
+<ul>
+    <foreach name="ajax_tree_list" item="vo" key="k" >
+    <li>
+        <span class="tree_span" data-id="{$vo.user_id}">
+        <i class="icon-folder-open"></i>
+        {$vo.tree_id}:
+        {$vo.user_name}
+        </span>
+    </li>
+    </foreach>
+</ul>

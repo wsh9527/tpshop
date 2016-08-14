@@ -1,0 +1,1 @@
+a:8:{s:7:"is_mark";s:1:"0";s:8:"mark_txt";s:0:"";s:8:"mark_img";s:0:"";s:10:"mark_width";s:0:"";s:11:"mark_height";s:0:"";s:11:"mark_degree";s:2:"53";s:12:"mark_quality";s:2:"55";s:3:"sel";s:1:"9";}

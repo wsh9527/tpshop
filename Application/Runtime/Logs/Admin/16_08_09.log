@@ -1,0 +1,6 @@
+[ 2016-08-09T11:06:45+08:00 ] 127.0.0.1 /index.php/Admin/Distribut/editWithdrawals/id/2
+ERR: 非法操作:editWithdrawals
+
+[ 2016-08-09T11:15:17+08:00 ] 127.0.0.1 /index.php/Admin/Distribut/withdrawals
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tp_shop.tp_widthdarwals' doesn't exist
+

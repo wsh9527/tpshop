@@ -1,0 +1,6 @@
+[ 2016-08-11T22:08:57+08:00 ] 127.0.0.1 /index.php/Admin/Distribut/tree
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tpshop.tp_tree' doesn't exist
+
+[ 2016-08-11T22:09:04+08:00 ] 127.0.0.1 /index.php/Admin/Distribut/tree
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tpshop.tp_tree' doesn't exist
+
