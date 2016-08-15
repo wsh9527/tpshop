@@ -122,7 +122,7 @@
                                     <div class="input-group-addon">
                                         申请时间<i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" id="start_time" value="2015/08/04-2030/08/05" name="create_time" class="form-control pull-right">
+                                    <input type="text" id="start_time" value="<?php echo ($data_list["startDate"]); ?> - <?php echo ($data_list["endDate"]); ?>" name="create_time" class="form-control pull-right">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -130,9 +130,6 @@
                             </div>
                         </form>
                     </div>
-
-                    <div id="ajax_return">
-
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                 <thead>
@@ -150,11 +147,10 @@
                                 </thead>
                                 <tbody>
                                 <!--循环start-->
-                                <?php if(is_array($data_list["data_list"])): $i = 0; $__LIST__ = $data_list["data_list"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr><?php echo ($vo["status"]); ?>
+                                <?php if(is_array($data_list["data_list"])): $i = 0; $__LIST__ = $data_list["data_list"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                                         <td class="text-left"><?php echo ($vo["id"]); ?></td>
                                         <td class="text-left">
-                                            <a href="/index.php/Admin/user/detail/id/<?php echo ($vo["id"]); ?>">
-                                                <?php echo ($vo["user_id"]); ?>                                        </a>
+                                            <a href="/index.php/Admin/user/detail/id/<?php echo ($vo["id"]); ?>"><?php echo ($vo["user_id"]); ?></a>
                                         </td>
                                         <td class="text-left"><?php echo (date("Y-m-d",$vo["create_time"])); ?></td>
                                         <td class="text-left"><?php echo ($vo["money"]); ?></td>
@@ -166,8 +162,10 @@
                                             <?php if($vo["status"] == '1'): ?>申请成功<?php endif; ?>
                                         </td>
                                         <td class="text-left">
-                                            <a href="/index.php/Admin/Distribut/editWithdrawals/id/<?php echo ($vo["id"]); ?>" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑"><i class="fa fa-pencil"></i></a>
-                                            <a href="javascript:void(0);" onclick="del(<?php echo ($vo["id"]); ?>)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>                                    </td>
+                                          <?php if($vo["status"] == 0): ?><a href="/index.php/Admin/Distribut/editWithdrawals/id/<?php echo ($vo["id"]); ?>" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑">
+                                              <i class="fa fa-pencil"></i>
+                                            </a><?php endif; ?>
+                                          <a href="javascript:void(0);" onclick="del(<?php echo ($vo["id"]); ?>)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>                                    </td>
                                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                                 <!--循环end-->
                                 </tbody>
@@ -178,8 +176,6 @@
                             <div class="col-sm-6 text-left"></div>
                             <div class="col-sm-6 text-right"><div class='dataTables_paginate paging_simple_numbers'><ul class='pagination'>    </ul></div></div>
                         </div>
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -206,13 +202,14 @@
     }
 
     $(document).ready(function() {
+        var startDate = "<?php echo ($data_list["startDate"]); ?>";
         $('#start_time').daterangepicker({
             format:"YYYY/MM/DD",
             singleDatePicker: false,
             showDropdowns: true,
             minDate:'2015/01/1',
             maxDate:'2030/06/20',
-            //startDate:'2030/06/20',
+            startDate:startDate,
             locale : {
                 applyLabel : '确定',
                 cancelLabel : '取消',
