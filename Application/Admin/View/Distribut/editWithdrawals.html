@@ -125,7 +125,8 @@
 // 确定提现
 function confirm_withdrawals()
 {
-    if(!confirm("确定将从平台扣除用户余额￥300.00,确定吗?"))
+    var money = {$data_info.money};
+    if(!confirm("确定将从平台扣除用户余额￥"+money+",确定吗?"))
         return false;
 
     if($.trim($('#remark').val()).length == 0)

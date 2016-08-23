@@ -188,7 +188,7 @@
                                         <td>分成时间：</td>
                                         <td >
                                             <select class="form-control" name="date" id="distribut_date">
-                                                <?php $__FOR_START_32461__=1;$__FOR_END_32461__=31;for($i=$__FOR_START_32461__;$i < $__FOR_END_32461__;$i+=1){ ?><option value="<?php echo ($i); ?>" <?php if($config[date] == $i): ?>selected="selected"<?php endif; ?>><?php echo ($i); ?>天</option><?php } ?>
+                                                <?php $__FOR_START_3413__=1;$__FOR_END_3413__=31;for($i=$__FOR_START_3413__;$i < $__FOR_END_3413__;$i+=1){ ?><option value="<?php echo ($i); ?>" <?php if($config[date] == $i): ?>selected="selected"<?php endif; ?>><?php echo ($i); ?>天</option><?php } ?>
                                             </select>
                                         </td>
                                         <td class="col-sm-7">订单收货确认后多少天可以分成</td>

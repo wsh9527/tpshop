@@ -140,6 +140,10 @@ class DistributController extends BaseController {
     public function rebate_log(){
         $this->display();
     }
+    /*编辑分成记录*/
+    public function editRebate(){
+        $this->display();
+    }
     /*上一个月的今天 没有返回最后一天*/
     function last_month_today($time){
         $last_month_time = mktime(date("G", $time), date("i", $time),date("s", $time), date("n", $time), 0, date("Y", $time));

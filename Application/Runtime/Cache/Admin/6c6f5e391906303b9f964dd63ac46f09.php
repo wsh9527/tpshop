@@ -165,7 +165,7 @@
                                           <?php if($vo["status"] == 0): ?><a href="/index.php/Admin/Distribut/editWithdrawals/id/<?php echo ($vo["id"]); ?>" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑">
                                               <i class="fa fa-pencil"></i>
                                             </a><?php endif; ?>
-                                          <a href="javascript:void(0);" onclick="del(<?php echo ($vo["id"]); ?>)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>                                    </td>
+                                          <!--<a href="javascript:void(0);" onclick="del(<?php echo ($vo["id"]); ?>)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>-->                                    </td>
                                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                                 <!--循环end-->
                                 </tbody>
@@ -184,6 +184,7 @@
 </div>
 <script>
     // 删除操作
+    /*
     function del(id)
     {
         if(!confirm('确定要删除吗?'))
@@ -192,15 +193,17 @@
             url:"/index.php?m=Admin&c=Distribut&a=delWithdrawals&id="+id,
             success: function(v){
                 var v =  eval('('+v+')');
-                if(v.hasOwnProperty('status') && (v.status == 1))
+                if(v.hasOwnProperty('status') && (v.status == 1)){
                     location.href='/index.php/Admin/Distribut/withdrawals';
-                else
+                  }
+                else{
                     layer.msg(v.msg, {icon: 2,time: 1000}); //alert(v.msg);
+                  }
             }
         });
         return false;
     }
-
+*/
     $(document).ready(function() {
         var startDate = "<?php echo ($data_list["startDate"]); ?>";
         $('#start_time').daterangepicker({
